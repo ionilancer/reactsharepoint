@@ -27,7 +27,7 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
         { 
          this.props.opciones.opciones.map((anObjectMapped, index) => {
          return (
-          <option value="volvo">Volvo</option>
+          <option value={anObjectMapped} key={index}>{anObjectMapped}</option>
             );
         })
  
