@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.0",
+    "libraryName": "formdesmontajes",
+    "libraryId": "7d66318f-24ad-4876-bc6a-a60eff40f10a",
+    "environment": "spo"
+  }
+}

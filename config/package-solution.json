@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "formdesmontajes-client-side-solution",
+    "id": "7d66318f-24ad-4876-bc6a-a60eff40f10a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/formdesmontajes.sppkg"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "formdesmontajes-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/formdesmontajes/FormdesmontajesWebPart.js",
+          "manifest": "./src/webparts/formdesmontajes/FormdesmontajesWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FormdesmontajesWebPartStrings": "lib/webparts/formdesmontajes/loc/{locale}.js"
+  }
+}
