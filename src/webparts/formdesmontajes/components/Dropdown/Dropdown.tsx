@@ -28,9 +28,7 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
   handleChange(){
     //https://github.com/JedWatson/react-select/issues/796
     /*
-https://dev365x546883.sharepoint.com/sites/desmontajes 
-ion.bengoetxea@DEV365x546883.onmicrosoft.com
-O365S3curit@s
+
 */
     console.log("change")
   }
