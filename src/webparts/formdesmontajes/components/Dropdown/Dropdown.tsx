@@ -26,7 +26,7 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
   componentWillMount(){
     var reactHandler = this;  
     jquery.ajax({  
-        url:   `https://dev365x546883.sharepoint.com/sites/desmontajes/_api/web/lists/getbytitle('`+this.props.lista+`')/items?$select=Title,Id,Created,URL,Author/Title&$expand=Author`,  
+        url:   `https://dev365x546883.sharepoint.com/sites/desmontajes/_api/web/lists/getbytitle('`+this.props.lista+`')/items?$select=Title,Id,Created,Author/Title&$expand=Author`,  
         type: "GET",  
         headers:{'Accept': 'application/json; odata=verbose;'},  
         success: function(resultData) {  
