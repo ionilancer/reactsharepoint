@@ -23,7 +23,7 @@ export default class Checkbox extends React.Component<CheckboxProps,CheckboxProp
   public render(): React.ReactElement<CheckboxProps> {
  
     return (
-        <span className={ styles.txtInput }>
+        <span >
           <label>{this.props.name}</label>
           <input 
             type ="checkbox"

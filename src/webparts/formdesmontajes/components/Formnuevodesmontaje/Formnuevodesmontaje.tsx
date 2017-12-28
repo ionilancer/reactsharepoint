@@ -31,8 +31,9 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
       opciones:["Cuotas","Instalación","Cuotas e instalación","Mantenimientos","Cuotas, instalación y mantenimientos","Cuotas y mantenimientos","Instalación y mantenimientos"]
     }; 
     return (
-      <div className={ styles.formdesmontajes }>
-       <div className={ styles.colizq }>
+      <div className={styles.formdesmontajes}>
+        <div className={styles.contenedor}>
+          <div className={styles.colDos}>
        <Txtinput name="Fecha registro" disabled={true} internalName="fecharegistro" value={fechaYHora} />
        <Txtinput name="Usuario" disabled={true} internalName="usuario"  value="" />
        <Txtinput name="Departamento" disabled={true} internalName="departamento"  value="" />
@@ -52,13 +53,14 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
        <Dropdown name="Motivo de devolución instalación" lista="Status monitoring" disabled={false} internalName="motivodevolucioninstalacion" opciones={opcionesMDI}/>
        <Dropdown name="Motivo de devolución cuotas" lista="Status monitoring" disabled={false} internalName="motivodevolucióncuotas" opciones={opcionesMDI}/>
        <Txtinput name="Fecha límite por reclamación consumo" disabled={true} internalName="fechalimitereclamaciónconsumo" value={fechaYHora} />
-        </div><div className={ styles.colder }>
         <Checkbox name="Penalización" disabled={false} internalName="penalización" />
         <Txtinput name="Importe penalización" disabled={true} internalName="importepenalizacion"  value="" />
         <Dropdown name="Motivo de penalización" lista="Status monitoring" disabled={false} internalName="motivopenalizacion" opciones={opcionesMDI}/>
         <Dropdown name="Exención de penalización" lista="Status monitoring" disabled={false} internalName="exencionpenalizacion" opciones={opcionesMDI}/>
         <Checkbox name="Alianzas" disabled={false} internalName="alianzas" />
         <Checkbox name="Descuenta bolita" disabled={false} internalName="descuentabolita" />
+        </div>
+          <div className={styles.colDos}>
         <Dropdown name="CC descuento bolita" lista="Status monitoring" disabled={false} internalName="ccdescuentobolita" opciones={opcionesMDI}/>
         <Txtinput name="Matrícula comercial" disabled={true} internalName="matrículacomercial"  value="" />
         <Dropdown name="Motivo baja" lista="Status monitoring" disabled={false} internalName="motivobaja" opciones={opcionesMDI}/>
@@ -81,6 +83,7 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
         <Txtinput name="Subtype" disabled={true} internalName="Subtype"  value="" />
         <Txtinput name="Sales type" disabled={true} internalName="salestype"  value="" />
         <Txtinput name="Member" disabled={true} internalName="member"  value="" />
+        </div>
         </div>
       </div>
     );

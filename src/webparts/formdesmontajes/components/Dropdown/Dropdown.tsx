@@ -44,9 +44,10 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
   public render(): React.ReactElement<DropdownProps> {
     if(this.state.opciones !=null){
     return (
-      <span className={ styles.txtInput }>
-      <label>{this.props.name}</label>
-        <select>
+      <div className={styles.formGroup}>
+        <label className={styles.formLabel}>{this.props.name}</label>
+        <div>
+          <select className={styles.formControl}>
         { 
          this.props.opciones.opciones.map(function(item,ikey){  
          return (
@@ -55,8 +56,9 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
         })
  
       }
-        </select>
-      </span>
+          </select>
+          </div>
+        </div>
     );
   }else{return null;} 
    }

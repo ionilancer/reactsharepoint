@@ -31,9 +31,11 @@ export default class Txtinput extends React.Component<TxtinputProps,TxtinputProp
   }
   public render(): React.ReactElement<TxtinputProps> {
     return (
-        <span className={ styles.txtInput }>
-          <label>{this.props.name}</label>
+      <div className={ styles.formGroup }>
+          <label className={ styles.formLabel }>{this.props.name}</label>
+          <div>
           <input 
+                className={ styles.formControl }
             type ="text"
             name={this.props.internalName}
             ref="input"
@@ -41,7 +43,8 @@ export default class Txtinput extends React.Component<TxtinputProps,TxtinputProp
             onChange ={this.handleChange}
             value={this.state.value}
             disabled={this.props.disabled}/>
-        </span>
+          </div>
+        </div>
     );
   }
 }

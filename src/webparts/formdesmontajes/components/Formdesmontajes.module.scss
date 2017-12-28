@@ -1,23 +1,9 @@
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
-
 .formdesmontajes {
   .container {
     max-width: 700px;
     margin: 0px auto;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
-  }
-  .colizq {
-    display: inline-block;
-    width: 50%;
-    vertical-align: top;
-  }
-  .colder {
-    display: inline-block;
-    width: 50%;
-    vertical-align: top;
-  }
-  .txtInput {
-    display:block;
   }
   .row {
     @include ms-Grid-row;
@@ -25,7 +11,6 @@
     background-color: $ms-color-themeDark;
     padding: 20px;
   }
-
   .column {
     @include ms-Grid-col;
     @include ms-lg10;
@@ -33,37 +18,29 @@
     @include ms-xlPush2;
     @include ms-lgPush1;
   }
-
   .title {
     @include ms-font-xl;
     @include ms-fontColor-white;
   }
-
   .subTitle {
     @include ms-font-l;
     @include ms-fontColor-white;
   }
-
   .description {
     @include ms-font-l;
     @include ms-fontColor-white;
   }
-
   .button {
     // Our button
     text-decoration: none;
-    height: 32px;
-
-    // Primary Button
+    height: 32px; // Primary Button
     min-width: 80px;
     background-color: $ms-color-themePrimary;
     border-color: $ms-color-themePrimary;
-    color: $ms-color-white;
-
-    // Basic Button
+    color: $ms-color-white; // Basic Button
     outline: transparent;
     position: relative;
-    font-family: "Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: $ms-font-size-m;
     font-weight: $ms-font-weight-regular;
@@ -72,7 +49,6 @@
     cursor: pointer;
     display: inline-block;
     padding: 0 16px;
-
     .label {
       font-weight: $ms-font-weight-semibold;
       font-size: $ms-font-size-m;
@@ -83,4 +59,58 @@
       display: inline-block;
     }
   }
+  //lyudmila
+  .contenedor {
+    font-family: sans-serif;
+    max-width: 1280px;
+    position: relative;
+    margin-top: 50px;
+    margin: auto; //padding: 20px;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+  }
+  .colDos {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+  }
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+  .formGroup {
+    div {
+      width: 50%;
+      display: inline-block;
+    }
+  }
+  .formLabel {
+    width: 40%;    
+    margin-right: 2%;
+    margin-bottom: 0;
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    display: inline-block;
+    line-height: 1.5;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .formControl {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    color: #515151;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+  select.formControl{
+    width: 114%;
+  }
+ 
+
 }
