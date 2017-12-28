@@ -43,6 +43,7 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
   }
   public render(): React.ReactElement<DropdownProps> {
     if(this.state.opciones !=null){
+      console.log(this.state.opciones);
     return (
       <div className={styles.formGroup}>
         <label className={styles.formLabel}>{this.props.name}</label>

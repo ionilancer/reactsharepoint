@@ -14,22 +14,7 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
   public render(): React.ReactElement<FormnuevodesmontajeProps> {
     let fechaYHora = (new Date().toISOString().replace('T', ' ').replace(/\..*$/, '')).replace(/-/g,'/');;
     let fecha=new Date().toJSON().slice(0,10).replace(/-/g,'/');
-    //Opciones del campo Status monitoring final
-    let opcionesEMF={
-      opciones:["BAJA","NI","XPRU"]
-    }; 
-    //Status billing final
-    let opcionesEBF={
-      opciones:["CUNO","STBY","N/A"]
-    }; 
-    //Devolución a favor de cliente
-    let opcionesDAC={
-      opciones:["Cuotas","Instalación","Cuotas e instalación","Mantenimientos","Cuotas, instalación y mantenimientos","Cuotas y mantenimientos","Instalación y mantenimientos"]
-    }; 
-     //Devolución a favor de cliente?
-     let opcionesMDI={
-      opciones:["Cuotas","Instalación","Cuotas e instalación","Mantenimientos","Cuotas, instalación y mantenimientos","Cuotas y mantenimientos","Instalación y mantenimientos"]
-    }; 
+    let opcionesCheck=[{"Title":"Sí","Id":"1"},{"Title":"No","Id":"2"}];
     return (
       <div className={styles.formdesmontajes}>
         <div className={styles.contenedor}>
@@ -41,7 +26,7 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
        <Txtinput name="Nº contrato (billing)" disabled={true} internalName="numcontrato"  value="" />
        <Txtinput name="Nº contrato antiguo (venta cruzada)" disabled={true} internalName="numcontratoantiguo"  value="" />
        <Txtinput name="Fecha instalación" disabled={true} internalName="fechainstalacion" value={fecha} />
-       <Checkbox name="Desmontaje" disabled={false} internalName="desmontaje" />
+       <Dropdown name="Desmontaje" lista="Status monitoring" disabled={false} internalName="desmontaje" opciones={opcionesCheck}/>
        <Txtinput name="Status monitoring inicial" disabled={true} internalName="statusmonitoringinicial" value="" />
        <Txtinput name="Status billing inicial" disabled={true} internalName="statusbillinginicial" value="" />
        <Dropdown name="Status monitoring final" lista="Status monitoring" disabled={false} internalName="statusmonitoringfinal" opciones={null}/>
@@ -53,12 +38,11 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
        <Dropdown name="Motivo de devolución instalación" lista="Status monitoring" disabled={false} internalName="motivodevolucioninstalacion" opciones={null}/>
        <Dropdown name="Motivo de devolución cuotas" lista="Status monitoring" disabled={false} internalName="motivodevolucióncuotas" opciones={null}/>
        <Txtinput name="Fecha límite por reclamación consumo" disabled={true} internalName="fechalimitereclamaciónconsumo" value={fechaYHora} />
-        <Checkbox name="Penalización" disabled={false} internalName="penalización" />
-        <Txtinput name="Importe penalización" disabled={true} internalName="importepenalizacion"  value="" />
+        <Dropdown name="Penalización" lista="Status monitoring" disabled={false} internalName="penalización" opciones={opcionesCheck}/>
         <Dropdown name="Motivo de penalización" lista="Status monitoring" disabled={false} internalName="motivopenalizacion" opciones={null}/>
         <Dropdown name="Exención de penalización" lista="Status monitoring" disabled={false} internalName="exencionpenalizacion" opciones={null}/>
-        <Checkbox name="Alianzas" disabled={false} internalName="alianzas" />
-        <Checkbox name="Descuenta bolita" disabled={false} internalName="descuentabolita" />
+        <Dropdown name="Alianzas" lista="Status monitoring" disabled={false} internalName="alianzas" opciones={opcionesCheck}/>
+        <Dropdown name="Descuenta bolita" lista="Status monitoring" disabled={false} internalName="descuentabolita" opciones={opcionesCheck}/>
         </div>
           <div className={styles.colDos}>
         <Dropdown name="CC descuento bolita" lista="Status monitoring" disabled={false} internalName="ccdescuentobolita" opciones={null}/>
@@ -68,9 +52,9 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
         <Txtinput name="Factura a abonar" disabled={true} internalName="facturaabonar"  value="" />
         <Txtinput name="Importe a devolver de instalación y/o mantenimiento" disabled={true} internalName="importedevolvernstalacionmantenimiento "  value="" />
         <Txtinput name="Importe a devolver por cuotas" disabled={true} internalName="importedevolverporcuotas"  value="" />
-        <Checkbox name="Cliente devuelve última cuota" disabled={false} internalName="clientedevuelveultimacuota" />
+        <Dropdown name="Cliente devuelve última cuota" lista="Status monitoring" disabled={false} internalName="clientedevuelveultimacuota" opciones={opcionesCheck}/>
         <Txtinput name="Importe total a devolver" disabled={true} internalName="importedevolvernstalacionmantenimiento "  value="" />
-        <Checkbox name="Cancelación equipo financiado" disabled={false} internalName="cancelacionequipofinanciado" />
+        <Dropdown name="Cancelación equipo financiado" lista="Status monitoring" disabled={false} internalName="cancelacionequipofinanciado" opciones={opcionesCheck}/>
         <Dropdown name="Tipo financiación" lista="Status monitoring" disabled={false} internalName="tipofinanciacion" opciones={null}/>
         <Txtinput name="Nombre cliente" disabled={true} internalName="nombrecliente"  value="" />
         <Txtinput name="DNI / CIF cliente" disabled={true} internalName="dnicif"  value="" />
