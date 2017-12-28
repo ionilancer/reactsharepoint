@@ -9,7 +9,8 @@ import {FormdesmontajesProps} from "./FormdesmontajesProps"
 
 export default class Formdesmontajes extends React.Component<FormdesmontajesProps, FormdesmontajesProps> {
   public constructor(props:FormdesmontajesProps,state:FormdesmontajesProps){  
-    super(props);  
+    super(props); 
+     
     this.state = {  
         modo:"nuevo"
     };  

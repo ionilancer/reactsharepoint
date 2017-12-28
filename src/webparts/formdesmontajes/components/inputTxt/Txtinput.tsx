@@ -7,7 +7,7 @@ export default class Txtinput extends React.Component<TxtinputProps,TxtinputProp
   }
   handleBlur() {
     let object = this.refs.input;
-    console.log(object)
+  
   }
   handleChange(e) {
     let object = this.refs.input;
@@ -24,7 +24,8 @@ export default class Txtinput extends React.Component<TxtinputProps,TxtinputProp
     this.handleBlur = this.handleBlur.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.validarCampo = this.validarCampo.bind(this);
-  }  
+  } 
+  
   componentDidMount(){
     let object = this.refs.input;
   }
@@ -34,7 +35,7 @@ export default class Txtinput extends React.Component<TxtinputProps,TxtinputProp
           <label>{this.props.name}</label>
           <input 
             type ="text"
-            name={(this.props.name.split(' ').join('')).replace(/[^a-zA-Z ]/g, "")}
+            name={this.props.internalName}
             ref="input"
             onBlur={this.handleBlur}
             onChange ={this.handleChange}
