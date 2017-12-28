@@ -10,8 +10,6 @@ import {
 } from '@microsoft/sp-webpart-base';
 
 export default class Checkbox extends React.Component<DropdownProps,DropdownProps> {
-  validarCampo(){
-  }
   public constructor(props: DropdownProps,state:DropdownProps){  
     super(props);  
     this.state = {  
@@ -22,7 +20,21 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
         lista: this.props.lista
     };  
     this.validarCampo = this.validarCampo.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }  
+
+  validarCampo(){
+  }
+  handleChange(){
+    //https://github.com/JedWatson/react-select/issues/796
+    /*
+https://dev365x546883.sharepoint.com/sites/desmontajes 
+ion.bengoetxea@DEV365x546883.onmicrosoft.com
+O365S3curit@s
+*/
+    console.log("change")
+  }
+
   componentWillMount(){
     if(this.props.opciones == null){
       var reactHandler = this;  
@@ -41,18 +53,31 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
       });  
     }
   }
+  componentDidMount(){
+  
+  }
   public render(): React.ReactElement<DropdownProps> {
     if(this.state.opciones !=null){
-      console.log(this.state.opciones);
+   // let blanco = this.props.default == "blanco" ? (<option value="blanco"></option>):null;
+   let opt = this.state.opciones;
+   let cont =0;
+   if(this.props.default == "blanco"){
+     let  optBlanco={"Title":"_","Id":cont};
+    opt.unshift(optBlanco);
+   
+   }
     return (
       <div className={styles.formGroup}>
         <label className={styles.formLabel}>{this.props.name}</label>
         <div>
-          <select className={styles.formControl}>
+          <select
+          onChange ={this.handleChange}
+        value ={this.props.default}         
+          className={styles.formControl}>
         { 
-         this.state.opciones.map(function(item,ikey){  
+         opt.map(function(item,ikey){  cont++;
          return (
-          <option value={item.Title} key={item.Id}>{item.Title}</option>
+          <option value={item.Title} key={cont}>{item.Title}</option>
             );
         })
       }

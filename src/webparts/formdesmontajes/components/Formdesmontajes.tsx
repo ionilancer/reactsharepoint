@@ -14,10 +14,14 @@ export default class Formdesmontajes extends React.Component<FormdesmontajesProp
   }  
   public render(): React.ReactElement<FormdesmontajesProps> {
     if(this.state.modo=="nuevo"){
+      let url_string = window.location.href;
+      let url = new URL(url_string);
+      let opcion = url.searchParams.get("opcion");
+      opcion = opcion != null ? opcion : "XPRU";// Si no se pasa ningun parametro por la URL por defecto XPRU
       return(
        <Formnuevodesmontajes 
        site={window.location.href.substr(0,window.location.href.indexOf("com")+3)}
-       opcion="URL" />
+       opcion={opcion} />
       );
     }
   }

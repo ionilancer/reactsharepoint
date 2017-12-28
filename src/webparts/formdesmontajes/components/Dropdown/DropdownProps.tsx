@@ -4,4 +4,5 @@ export interface DropdownProps {
   internalName: string;
   opciones?:any;
   lista: string;
+  default?:any;
 }

@@ -5,7 +5,6 @@ export default class Checkbox extends React.Component<CheckboxProps,CheckboxProp
   validarCampo(){
 
   }
-
   public constructor(props: CheckboxProps,state:CheckboxProps){  
     super(props);  
     this.state = {  
@@ -14,7 +13,6 @@ export default class Checkbox extends React.Component<CheckboxProps,CheckboxProp
         internalName: this.props.internalName,
 
     };  
-
     this.validarCampo = this.validarCampo.bind(this);
   }  
   componentDidMount(){
