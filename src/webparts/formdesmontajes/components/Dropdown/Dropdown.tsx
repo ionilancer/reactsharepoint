@@ -31,10 +31,10 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
         headers:{'Accept': 'application/json; odata=verbose;'},  
         success: function(resultData) {  
           console.log(resultData.d.results)
-          /*resultData.d.results;  
+          resultData.d.results;  
           reactHandler.setState({  
-            items: resultData.d.results  
-          });  */
+            opciones: resultData.d.results  
+          });  
         },  
         error : function(jqXHR, textStatus, errorThrown) {  
           console.log(jqXHR,textStatus,errorThrown);
@@ -42,15 +42,15 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
     });  
   }
   public render(): React.ReactElement<DropdownProps> {
-
+    if(this.state.opciones !=null){
     return (
       <span className={ styles.txtInput }>
       <label>{this.props.name}</label>
         <select>
         { 
-         this.props.opciones.opciones.map((anObjectMapped, index) => {
+         this.props.opciones.opciones.map(function(item,ikey){  
          return (
-          <option value={anObjectMapped} key={index}>{anObjectMapped}</option>
+          <option value={item.Title} key={ikey}>{item.Title}</option>
             );
         })
  
@@ -58,5 +58,7 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
         </select>
       </span>
     );
-  }
+  }else{return null;} 
+   }
+
 }

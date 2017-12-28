@@ -43,7 +43,7 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
        <Checkbox name="Desmontaje" disabled={false} internalName="desmontaje" />
        <Txtinput name="Status monitoring inicial" disabled={true} internalName="statusmonitoringinicial" value="" />
        <Txtinput name="Status billing inicial" disabled={true} internalName="statusbillinginicial" value="" />
-       <Dropdown name="Status monitoring final" lista="Status monitoring" disabled={false} internalName="statusmonitoringfinal" opciones={{}}/>
+       <Dropdown name="Status monitoring final" lista="Status monitoring" disabled={false} internalName="statusmonitoringfinal" opciones={null}/>
        <Dropdown name="Status billing final" lista="Status monitoring" disabled={false} internalName="statusbillingfinal" opciones={opcionesEMF}/>
        <Txtinput name="Fecha cambio status de billing final" disabled={false} internalName="fechacambiostatusbillingfinal" value={fecha} />
        <Txtinput name="Antigüedad del cliente" disabled={true} internalName="antiguedaddelcliente"  value="" />
