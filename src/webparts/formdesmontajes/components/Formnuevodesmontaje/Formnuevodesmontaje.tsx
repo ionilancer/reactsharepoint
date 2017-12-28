@@ -45,25 +45,25 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
        <Txtinput name="Status monitoring inicial" disabled={true} internalName="statusmonitoringinicial" value="" />
        <Txtinput name="Status billing inicial" disabled={true} internalName="statusbillinginicial" value="" />
        <Dropdown name="Status monitoring final" lista="Status monitoring" disabled={false} internalName="statusmonitoringfinal" opciones={null}/>
-       <Dropdown name="Status billing final" lista="Status monitoring" disabled={false} internalName="statusbillingfinal" opciones={opcionesEMF}/>
+       <Dropdown name="Status billing final" lista="Status monitoring" disabled={false} internalName="statusbillingfinal" opciones={null}/>
        <Txtinput name="Fecha cambio status de billing final" disabled={false} internalName="fechacambiostatusbillingfinal" value={fecha} />
        <Txtinput name="Antigüedad del cliente" disabled={true} internalName="antiguedaddelcliente"  value="" />
        <Txtinput name="Panel" disabled={true} internalName="panel"  value="" />
-       <Dropdown name="Devolución a favor de cliente" lista="Status monitoring" disabled={false} internalName="statusbillingfinal" opciones={opcionesDAC}/>
-       <Dropdown name="Motivo de devolución instalación" lista="Status monitoring" disabled={false} internalName="motivodevolucioninstalacion" opciones={opcionesMDI}/>
-       <Dropdown name="Motivo de devolución cuotas" lista="Status monitoring" disabled={false} internalName="motivodevolucióncuotas" opciones={opcionesMDI}/>
+       <Dropdown name="Devolución a favor de cliente" lista="Status monitoring" disabled={false} internalName="statusbillingfinal" opciones={null}/>
+       <Dropdown name="Motivo de devolución instalación" lista="Status monitoring" disabled={false} internalName="motivodevolucioninstalacion" opciones={null}/>
+       <Dropdown name="Motivo de devolución cuotas" lista="Status monitoring" disabled={false} internalName="motivodevolucióncuotas" opciones={null}/>
        <Txtinput name="Fecha límite por reclamación consumo" disabled={true} internalName="fechalimitereclamaciónconsumo" value={fechaYHora} />
         <Checkbox name="Penalización" disabled={false} internalName="penalización" />
         <Txtinput name="Importe penalización" disabled={true} internalName="importepenalizacion"  value="" />
-        <Dropdown name="Motivo de penalización" lista="Status monitoring" disabled={false} internalName="motivopenalizacion" opciones={opcionesMDI}/>
-        <Dropdown name="Exención de penalización" lista="Status monitoring" disabled={false} internalName="exencionpenalizacion" opciones={opcionesMDI}/>
+        <Dropdown name="Motivo de penalización" lista="Status monitoring" disabled={false} internalName="motivopenalizacion" opciones={null}/>
+        <Dropdown name="Exención de penalización" lista="Status monitoring" disabled={false} internalName="exencionpenalizacion" opciones={null}/>
         <Checkbox name="Alianzas" disabled={false} internalName="alianzas" />
         <Checkbox name="Descuenta bolita" disabled={false} internalName="descuentabolita" />
         </div>
           <div className={styles.colDos}>
-        <Dropdown name="CC descuento bolita" lista="Status monitoring" disabled={false} internalName="ccdescuentobolita" opciones={opcionesMDI}/>
+        <Dropdown name="CC descuento bolita" lista="Status monitoring" disabled={false} internalName="ccdescuentobolita" opciones={null}/>
         <Txtinput name="Matrícula comercial" disabled={true} internalName="matrículacomercial"  value="" />
-        <Dropdown name="Motivo baja" lista="Status monitoring" disabled={false} internalName="motivobaja" opciones={opcionesMDI}/>
+        <Dropdown name="Motivo baja" lista="Status monitoring" disabled={false} internalName="motivobaja" opciones={null}/>
         <Txtinput name="Importe de abono" disabled={true} internalName="importeabono"  value="" />
         <Txtinput name="Factura a abonar" disabled={true} internalName="facturaabonar"  value="" />
         <Txtinput name="Importe a devolver de instalación y/o mantenimiento" disabled={true} internalName="importedevolvernstalacionmantenimiento "  value="" />
@@ -71,7 +71,7 @@ export default class Formnuevodesmontaje extends React.Component<Formnuevodesmon
         <Checkbox name="Cliente devuelve última cuota" disabled={false} internalName="clientedevuelveultimacuota" />
         <Txtinput name="Importe total a devolver" disabled={true} internalName="importedevolvernstalacionmantenimiento "  value="" />
         <Checkbox name="Cancelación equipo financiado" disabled={false} internalName="cancelacionequipofinanciado" />
-        <Dropdown name="Tipo financiación" lista="Status monitoring" disabled={false} internalName="tipofinanciacion" opciones={opcionesMDI}/>
+        <Dropdown name="Tipo financiación" lista="Status monitoring" disabled={false} internalName="tipofinanciacion" opciones={null}/>
         <Txtinput name="Nombre cliente" disabled={true} internalName="nombrecliente"  value="" />
         <Txtinput name="DNI / CIF cliente" disabled={true} internalName="dnicif"  value="" />
         <Txtinput name="IBAN" disabled={true} internalName="iban"  value="" />

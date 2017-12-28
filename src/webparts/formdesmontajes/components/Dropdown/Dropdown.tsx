@@ -24,22 +24,22 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
     this.validarCampo = this.validarCampo.bind(this);
   }  
   componentWillMount(){
-    var reactHandler = this;  
-    jquery.ajax({  
-        url:   `https://dev365x546883.sharepoint.com/sites/desmontajes/_api/web/lists/getbytitle('`+this.props.lista+`')/items?$select=Title,Id,Created,Author/Title&$expand=Author`,  
-        type: "GET",  
-        headers:{'Accept': 'application/json; odata=verbose;'},  
-        success: function(resultData) {  
-          console.log(resultData.d.results)
-          resultData.d.results;  
-          reactHandler.setState({  
-            opciones: resultData.d.results  
-          });  
-        },  
-        error : function(jqXHR, textStatus, errorThrown) {  
-          console.log(jqXHR,textStatus,errorThrown);
-        }  
-    });  
+    if(this.props.opciones == null){
+      var reactHandler = this;  
+      jquery.ajax({  
+          url:   `https://dev365x546883.sharepoint.com/sites/desmontajes/_api/web/lists/getbytitle('`+this.props.lista+`')/items?$select=Title,Id,Created,Author/Title&$expand=Author`,  
+          type: "GET",  
+          headers:{'Accept': 'application/json; odata=verbose;'},  
+          success: function(resultData) {  
+            reactHandler.setState({  
+              opciones: resultData.d.results  
+            });  
+          },  
+          error : function(jqXHR, textStatus, errorThrown) {  
+            console.log(jqXHR,textStatus,errorThrown);
+          }  
+      });  
+    }
   }
   public render(): React.ReactElement<DropdownProps> {
     if(this.state.opciones !=null){
@@ -49,12 +49,11 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
         <div>
           <select className={styles.formControl}>
         { 
-         this.props.opciones.opciones.map(function(item,ikey){  
+         this.state.opciones.map(function(item,ikey){  
          return (
-          <option value={item.Title} key={ikey}>{item.Title}</option>
+          <option value={item.Title} key={item.Id}>{item.Title}</option>
             );
         })
- 
       }
           </select>
           </div>
