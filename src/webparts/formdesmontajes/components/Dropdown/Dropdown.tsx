@@ -17,27 +17,27 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
         disabled: this.props.disabled,
         internalName: this.props.internalName,
         opciones:this.props.opciones,
-        lista: this.props.lista
+        lista: this.props.lista,
+        site:this.props.site,
+        default:this.props.default
     };  
     this.validarCampo = this.validarCampo.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
   }  
-
   validarCampo(){
+    
   }
-  handleChange(){
-    //https://github.com/JedWatson/react-select/issues/796
-    /*
-
-*/
-    console.log("change")
+  handleChange(e){
+    this.setState({
+      default: e.target.value
+  });
   }
 
   componentWillMount(){
     if(this.props.opciones == null){
       var reactHandler = this;  
       jquery.ajax({  
-          url:   `https://dev365x546883.sharepoint.com/sites/desmontajes/_api/web/lists/getbytitle('`+this.props.lista+`')/items?$select=Title,Id,Created,Author/Title&$expand=Author`,  
+          url:   this.props.site+`/sites/desmontajes/_api/web/lists/getbytitle('`+this.props.lista+`')/items?$select=Title,Id,Created,Author/Title&$expand=Author`,  
           type: "GET",  
           headers:{'Accept': 'application/json; odata=verbose;'},  
           success: function(resultData) {  
@@ -46,31 +46,30 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
             });  
           },  
           error : function(jqXHR, textStatus, errorThrown) {  
-            console.log(jqXHR,textStatus,errorThrown);
+
           }  
       });  
     }
   }
   componentDidMount(){
-  
+
   }
   public render(): React.ReactElement<DropdownProps> {
+ 
     if(this.state.opciones !=null){
-   // let blanco = this.props.default == "blanco" ? (<option value="blanco"></option>):null;
    let opt = this.state.opciones;
    let cont =0;
-   if(this.props.default == "blanco"){
-     let  optBlanco={"Title":"_","Id":cont};
+   if(this.state.default == "blanco"){
+     let optBlanco={"Title":"","Id":cont};
     opt.unshift(optBlanco);
-   
    }
     return (
       <div className={styles.formGroup}>
         <label className={styles.formLabel}>{this.props.name}</label>
         <div>
           <select
-          onChange ={this.handleChange}
-        value ={this.props.default}         
+          onChange ={this.handleChange.bind(this)}
+          value ={this.state.default}         
           className={styles.formControl}>
         { 
          opt.map(function(item,ikey){  cont++;

@@ -7,10 +7,8 @@ export default class Txtinput extends React.Component<TxtinputProps,TxtinputProp
   }
   handleBlur() {
     let object = this.refs.input;
-  
   }
   handleChange(e) {
-    let object = this.refs.input;
     this.setState({ value: e.target.value });
   }
   public constructor(props: TxtinputProps,state:TxtinputProps){  

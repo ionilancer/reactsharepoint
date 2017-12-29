@@ -5,4 +5,5 @@ export interface DropdownProps {
   opciones?:any;
   lista: string;
   default?:any;
+  site:string;
 }
