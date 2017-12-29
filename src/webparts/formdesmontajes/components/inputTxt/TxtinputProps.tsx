@@ -4,4 +4,5 @@ export interface TxtinputProps {
   internalName: string;
   value:string;
   tipo:string;
+  requerido:boolean;
 }

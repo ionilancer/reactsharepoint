@@ -6,4 +6,5 @@ export interface DropdownProps {
   lista: string;
   default?:any;
   site:string;
+  requerido:boolean;
 }

@@ -19,7 +19,8 @@ export default class Checkbox extends React.Component<DropdownProps,DropdownProp
         opciones:this.props.opciones,
         lista: this.props.lista,
         site:this.props.site,
-        default:this.props.default
+        default:this.props.default,
+        requerido:this.props.requerido
     };  
     this.validarCampo = this.validarCampo.bind(this);
     //this.handleChange = this.handleChange.bind(this);

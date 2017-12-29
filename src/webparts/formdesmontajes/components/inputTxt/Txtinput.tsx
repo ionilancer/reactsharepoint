@@ -10,7 +10,8 @@ export default class Txtinput extends React.Component<TxtinputProps,TxtinputProp
         disabled: this.props.disabled,
         internalName: this.props.internalName,
         value:this.props.value,
-        tipo:this.props.tipo
+        tipo:this.props.tipo,
+        requerido:this.props.requerido
     };  
     this.handleBlur = this.handleBlur.bind(this);
     this.handleChange = this.handleChange.bind(this);
