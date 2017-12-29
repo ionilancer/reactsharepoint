@@ -3,4 +3,5 @@ export interface TxtinputProps {
   disabled: boolean;
   internalName: string;
   value:string;
+  tipo:string;
 }

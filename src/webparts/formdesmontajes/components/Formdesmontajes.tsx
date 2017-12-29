@@ -8,12 +8,17 @@ import {FormdesmontajesProps} from "./FormdesmontajesProps";
 export default class Formdesmontajes extends React.Component<FormdesmontajesProps, FormdesmontajesProps> {
   public constructor(props:FormdesmontajesProps,state:FormdesmontajesProps){  
     super(props); 
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let modo = url.searchParams.get("modo") ? url.searchParams.get("modo ") :"new";
      this.state = {  
-        modo:"nuevo"
+        modo:"new"
      };  
   }  
   public render(): React.ReactElement<FormdesmontajesProps> {
-    if(this.state.modo=="nuevo"){
+
+    if(this.state.modo=="new"){
+
       let url_string = window.location.href;
       let url = new URL(url_string);
       let opcion = url.searchParams.get("opcion");
